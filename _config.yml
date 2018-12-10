@@ -1,39 +1,44 @@
-<<<<<<< HEAD
+#<<<<<<< HEAD
 theme: jekyll-theme-dinky
-=======
+#=======
 # Site
 repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Personal info
-name: Your Name
-title: Your job title
-email: Your email (optional)
-website: Your website (optional)
+name: Jahir Medina
+full_name: Jahir Gilberth Medina Lopez
+title: Student
+email: contact@jahirmedina.com
+website: jahirmedina.com
 
 # Social links
-twitter_username: jekyllrb
-github_username:  jekyll
-dribbble_username: jekyll
-facebook_username: jekyll
-flickr_username: jekyll
-instagram_username: jekyll
-linkedin_username: jekyll
-pinterest_username: jekyll
-youtube_username: jekyll
-googleplus_username: +jekyll
+twitter_username: jahirmedinacs
+github_username:  jahirmedinacs
+# dribbble_username: jekyll
+facebook_username: jahirmedinacs
+# flickr_username: jekyll
+instagram_username: jahirmedinacs
+linkedin_username: jahirmedinacs
+# pinterest_username: jekyll
+# youtube_username: jekyll
+# googleplus_username: +jekyll
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
+about_profile_image: /assets/cv-front.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+  Computer Science Student at National Unversity of Trujillo, ***Machine Learning Enthusiast*** and Scientific Computing Researcher in Progress
 
-  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
-    - Lists
-    - Tables
-    - Links
-    - Images
+  Programming Languages
+  
+    |  P.L.  	| Habilities 	| Where 0  means:                      	| and my score:                                       	|
+    |:------:	|:----------:	|-----------------------------------	|--------------------------------------------------------	|
+    | Python 	|   95/100   	| Adding 2 Strings                  	| RSA Encryption with GUI Implementation                 	|
+    |  C/C++ 	|   70/100   	| Sorting a List                    	| WAV Audio Compression with CLI                         	|
+    |    R   	|   60/100   	| Plot a Histogram                  	| Create a MLP from Scratch                              	|
+    |  Bash  	|   60/100   	| Execute 2 program using pipelines 	| Automatic AWS EC2 Conection with CLI and Verbos Option 	|
+    |  SQL  	|   50/100   	| Create a View 	| Script for Transcription between Transaccional and Dimentional Database 	|
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)
@@ -44,12 +49,24 @@ about_content: | # this will include new lines to allow paragraphs
 # Education Section
 # educaton_title: Education #(Use this to override about education section title)
 
+# Academic Experience Section (and events)
+# academic_experience_title: Academic Achievements and Events
+
+# social responsibilities Section (and events)
+social_responsibilities_title: Academic and Social Responsibilities
+
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs
-  This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+    i'm currently apoting to do a Master Degre in Economics, descition that was made during my exchange at ICMC - USP. 
+    I do electronics, hardware assembling  and fixing during my spare time.
+    Maybe i didnt mention the languages i spoke, so, see they below:
 
-  Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+    - Spanish
+    - Portuges
+    - English
+    - French
+    - Learing : Mandarin
 
 # Footer
 footer_show_references: true
@@ -64,4 +81,4 @@ sass:
 
 plugins:
  - jekyll-seo-tag
->>>>>>> 0637ce672166658283db68ee11f5ce432f40d25c
+#>>>>>>> 0637ce672166658283db68ee11f5ce432f40d25c

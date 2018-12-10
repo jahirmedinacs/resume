@@ -23,6 +23,14 @@
       {%- if site.data.education.size > 0 -%}
         {%- include education.html -%}
       {%- endif -%}
+        
+      {%- if site.data.academic_experience.size > 0 -%}
+        {%- include academic_experience.html -%}
+      {%- endif -%}
+        
+      {%- if site.data.social_responsibilities.size > 0 -%}
+        {%- include social_responsibilities.html -%}
+      {%- endif -%}
 
       {%- if site.more_content -%}
         {%- include more.html -%}
