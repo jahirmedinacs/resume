@@ -79,6 +79,16 @@
             </a>
           </li>
         {%- endif -%}
+
+        <!--  HTML TO PDF  -->
+
+        <li>
+          <a class="button button--sacnite button--round-l">
+            <i id="generatePDF" class="fa fa-file-pdf-o" aria-hidden="true" title="Download-me as PDF"></i>
+          </a>
+<!--          <button id="generatePDF">generate PDF</button>-->
+        </li>
+
       </ul>
 
       {%- if site.email -%}
@@ -86,11 +96,17 @@
           Email: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
         </p>
       {%- endif -%}
+      {%- if site.phone_number -%}
+      <p>
+        Phone Number: <a href="tel:{{ site.phone_number }}" target="_blank">{{ site.phone_number | escape }}</a>
+      </p>
+      {%- endif -%}
       {%- if site.website -%}
         <p>
           Web: <a href="http://{{ site.website }}" target="_blank">{{ site.website | escape }}</a>
         </p>
       {%- endif -%}
+
     </div>
   </div>
 </div>

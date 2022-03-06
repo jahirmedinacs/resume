@@ -4,6 +4,6 @@
   job_title: Job title
   dates: Date Range (eg. November 2016 - present)
   quote: >
-   Short description of the company (optional)
+    Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
     Description of role

@@ -8,17 +8,18 @@ repository: Git repository where your resume will be hosted, only required if yo
 # Personal info
 name: Jahir Medina
 full_name: Jahir Gilberth Medina Lopez
-title: Student
+title: BsC Computer Science / Informatics Engineer
 email: contact@jahirmedina.com
 website: jahirmedina.com
+phone_number: +1 (234) 529-4385
 
 # Social links
-twitter_username: jahirmedinacs
+#twitter_username: jahirmedinacs
 github_username:  jahirmedinacs
 # dribbble_username: jekyll
-facebook_username: jahirmedinacs
+#facebook_username: jahirmedinacs
 # flickr_username: jekyll
-instagram_username: jahirmedinacs
+#instagram_username: jahirmedinacs
 linkedin_username: jahirmedinacs
 # pinterest_username: jekyll
 # youtube_username: jekyll
@@ -28,29 +29,26 @@ linkedin_username: jahirmedinacs
 # about_title: About Me (Use this to override about section title)
 about_profile_image: /assets/cv-front.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Computer Science Student at National Unversity of Trujillo, ***Machine Learning Enthusiast*** and Scientific Computing Researcher in Progress
+  QA Automation Engineer and Scientific Computing Researcher | Computer Science Bachelor and Informatics Engineer from National Unversity of Trujillo
 
-  Programming Languages
-  
-    |  P.L.  	| Habilities 	| Where 0  means:                      	| and my score:                                       	|
-    |:------:	|:----------:	|-----------------------------------	|--------------------------------------------------------	|
-    | Python 	|   95/100   	| Adding 2 Strings                  	| RSA Encryption with GUI Implementation                 	|
-    |  C/C++ 	|   70/100   	| Sorting a List                    	| WAV Audio Compression with CLI                         	|
-    |    R   	|   60/100   	| Plot a Histogram                  	| Create a MLP from Scratch                              	|
-    |  Bash  	|   60/100   	| Execute 2 program using pipelines 	| Automatic AWS EC2 Conection with CLI and Verbos Option 	|
-    |  SQL  	|   50/100   	| Create a View 	| Script for Transcription between Transaccional and Dimentional Database 	|
-
-# Projects Section
-# projects_title: Projects #(Use this to override about projects section title)
 
 # Experience Section
-# experience_title: Experience #(Use this to override about experience section title)
+experience_title: Work Experience #(Use this to override about experience section title)
+
+# Programing Laguages Section
+programing_languages_title: Programing Languages and Technical Tools #(Use this to override about experience section title)
+
+# Projects Section
+projects_title: Personal and Research Projects #(Use this to override about projects section title)
 
 # Education Section
-# educaton_title: Education #(Use this to override about education section title)
+educaton_title: Education #(Use this to override about education section title)
+
+# Languages
+languages_title: Languages
 
 # Academic Experience Section (and events)
-# academic_experience_title: Academic Achievements and Events
+academic_experience_title: Academic Achievements and Events
 
 # social responsibilities Section (and events)
 social_responsibilities_title: Academic and Social Responsibilities
