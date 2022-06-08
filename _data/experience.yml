@@ -7,3 +7,21 @@
     Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
     Description of role
+
+- company: NTTData Emeal (Everis)
+  link: https://pe.nttdata.com/
+  job_title: Senior Test Automation Engineer
+  dates: August 2021 - Current Date
+  quote: >
+    Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    Description of role
+
+- company: NTTData Emeal (Everis)
+  link: https://pe.nttdata.com/
+  job_title: Senior Test Automation Engineer
+  dates: August 2021 - Current Date
+  quote: >
+    Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    Description of role

@@ -10,9 +10,18 @@ name: Jahir Medina
 full_name: Jahir Gilberth Medina Lopez
 title: BsC Computer Science / Informatics Engineer
 email: contact@jahirmedina.com
-website: jahirmedina.com
-phone_number: +1 (234) 529-4385
-
+website: ghp.jahirmedina.com
+phone_number: 
+  - tag: WorldWide
+    value: 12345294385
+    whatsapp: true
+    telegram: true
+    telegramuser: jahirmedinacs_business
+  - tag: Peru
+    value: 51974453856
+    whatsapp: true
+    telegram: true
+    telegramuser: jahirmedinacs_work
 # Social links
 #twitter_username: jahirmedinacs
 github_username:  jahirmedinacs
@@ -26,8 +35,8 @@ linkedin_username: jahirmedinacs
 # googleplus_username: +jekyll
 
 # About Section
-# about_title: About Me (Use this to override about section title)
-about_profile_image: /assets/cv-front.jpg
+about_title: Brief Bio
+about_profile_image: /assets/cv-firstplane.jpg
 about_content: | # this will include new lines to allow paragraphs
   QA Automation Engineer and Scientific Computing Researcher | Computer Science Bachelor and Informatics Engineer from National Unversity of Trujillo
 
@@ -55,16 +64,16 @@ social_responsibilities_title: Academic and Social Responsibilities
 
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
-more_content: | # this will include new lines to allow paragraphs
-    i'm currently apoting to do a Master Degre in Economics, descition that was made during my exchange at ICMC - USP. 
-    I do electronics, hardware assembling  and fixing during my spare time.
-    Maybe i didnt mention the languages i spoke, so, see they below:
+# more_content: | # this will include new lines to allow paragraphs
+#     i'm currently apoting to do a Master Degre in Economics, descition that was made during my exchange at ICMC - USP. 
+#     I do electronics, hardware assembling  and fixing during my spare time.
+#     Maybe i didnt mention the languages i spoke, so, see they below:
 
-    - Spanish
-    - Portuges
-    - English
-    - French
-    - Learing : Mandarin
+#     - Spanish
+#     - Portuges
+#     - English
+#     - French
+#     - Learing : Mandarin
 
 # Footer
 footer_show_references: true

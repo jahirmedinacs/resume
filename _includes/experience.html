@@ -1,5 +1,8 @@
-<div class="container experience-container">
-  <h3>{{ site.experience_title | default: "Experience" }}</h3>
+<!-- <button onclick="hideComponent('experienceParent')">Hide/Show</button> -->
+
+<div class="container experience-container" id="experienceParent">
+  <h3>{{ site.experience_title | default: "Experience" }}
+  </h3>
   {% for experience in site.data.experience %}
     <div class="row clearfix experience">
       <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 left-column">

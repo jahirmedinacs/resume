@@ -84,7 +84,7 @@
 
         <li>
           <a class="button button--sacnite button--round-l">
-            <i id="generatePDF" class="fa fa-file-pdf-o" aria-hidden="true" title="Download-me as PDF"></i>
+            <i onclick='printWeb()' id="generatePDF" class="fa fa-file-pdf-o" aria-hidden="true" title="Download-me as PDF"></i>
           </a>
 <!--          <button id="generatePDF">generate PDF</button>-->
         </li>
@@ -98,12 +98,27 @@
       {%- endif -%}
       {%- if site.phone_number -%}
       <p>
-        Phone Number: <a href="tel:{{ site.phone_number }}" target="_blank">{{ site.phone_number | escape }}</a>
+        Phone Number(s):
+        {% for phone in site.phone_number %}
+                <p style="font-size: 12px;">
+                  {{ phone.tag }} : 
+                    <a href="tel:+{{ phone.value }}" target="_blank">+{{ phone.value | escape }}</a>
+                  &nbsp;|&nbsp;  
+                  {%- if phone.whatsapp -%}
+                    <a href="https://wa.me/{{ phone.value }}" target="_blank" rel="external"><i class="fa-brands fa-whatsapp"></i></a>
+                  {%- endif -%}
+                  &nbsp;|&nbsp;
+                  {%- if phone.telegram -%}
+                    <a href="https://t.me/{{ phone.telegramuser }}" target="_blank" rel="external"><i class="fa-brands fa-telegram"></i></a>
+                  {%- endif -%}
+                  &nbsp;|&nbsp;
+                </p>
+        {% endfor %}
       </p>
       {%- endif -%}
       {%- if site.website -%}
         <p>
-          Web: <a href="http://{{ site.website }}" target="_blank">{{ site.website | escape }}</a>
+          Web: <a href="https://{{ site.website }}" target="_blank">{{ site.website | escape }}</a>
         </p>
       {%- endif -%}
 
