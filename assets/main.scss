@@ -88,6 +88,31 @@ ul.icons a {
   box-shadow: inset 0 0 20px #636161;
 }
 
+.business-logo {
+  width: 150px;
+  // height: 50px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat, no-repeat;
+  background-color: darkgray;
+  display: inline-block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 1rem;
+  filter: grayscale(1);
+
+  @media print {
+    background-color: darkgray !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+}
+
 .into-text-1 {
   margin-top: 30px;
 }
@@ -98,7 +123,7 @@ ul.icons a {
   }
 }
 
-.projects-container, .experience-container, .education-container {
+.projects-container, .experience-container, .education-container, .languages-container{
   h3 {
     margin-bottom: 0;
   }
@@ -106,11 +131,11 @@ ul.icons a {
 
 .intro-container{
   button {
-    margin-top: -9%;
+    margin-top: 0%;
   }
 }
 
-.experience, .education, .project {
+.project, .experience, .education, .languages{
   margin-top: 3em;
 
   .left-column {

@@ -1,18 +1,37 @@
-<div class="container education-container">
-    <h3>{{ site.languages_title | default: "Education" }}</h3>
-    {% for education in site.data.languages %}
-    <div class="row clearfix education">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 left-column">
-            <h4>{{ education.name }}</h4>
-            <p><b>{{ education.qualification }}</b></p>
-            <p>{{ education.dates }}</p>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-            {%- if education.quote -%}
-            <p class="quote">{{ education.quote }}</p>
+<div class="container languages-container">
+    <h3>{{ site.languages_title | default: "languages" }}
+    </h3>
+    <button class="no-print" onclick="hideComponent('languagesParent')" style="background-color: gray;">Hide/Show</button>
+    <div id="languagesParent">
+      {% for languages in site.data.languages %}
+      <div class="row clearfix languages">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-print-4 left-column">
+          <h4 class="name">
+            {%- if languages.link -%}
+              <a href="https://{{ languages.link }}" target="_blank">
             {%- endif -%}
-            {{ education.description | strip | markdownify }}
+              {{ languages.name }}
+            {%- if languages.link -%}
+              </a>
+            {%- endif -%}
+          </h4>
+          <p><b>{{ languages.level }}</b></p>
+          <p>{{ languages.dates }}</p>
+          {%- if languages.ref_img %}
+              <p style="margin-top: 5%;">
+                <img class="business-logo" src="{{ languages.ref_img }}">
+              </p>
+            {%- endif -%} 
         </div>
-    </div>
+        <div class="col-xs-12 col-sm-8 col-md-9 col-print-8">
+          {%- if languages.quote -%}
+            <p class="quote">{{ languages.quote }}</p>
+          {%- endif -%}
+          {{ languages.description | strip | markdownify }}
+        </div>
+      </div>
+    <hr></hr>
     {% endfor %}
-</div>
+    </div>
+  </div>
+  

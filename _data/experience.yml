@@ -10,6 +10,7 @@
 
 - company: NTTData EMEAL
   link: pe.nttdata.com/
+  ref_img: https://www.nttdata.com/assets3/images/header_logo.svg
   job_title: Senior Test Automation Engineer
   dates: August 2021 - Current Date
   quote: >
@@ -21,6 +22,7 @@
 
 - company: Delaware Peru
   link: www.grupodelaware.com/
+  ref_img: https://static.wixstatic.com/media/7cbc55_05610919b032b6ebd39229d5a9ed77b3.png
   job_title: QA Analyst
   dates: March 2021 - Agoust 2021
   quote: >
@@ -28,3 +30,12 @@
   description: | # this will include new lines to allow paragraphs
     Full-time tester for Telefónica Movistar (Client) under the agile Scrum methodology, performing E2E, Integration and automated tests with Selenium WebDriver, Postman, SoapUI, Android Studio and Appium.
 
+- company: Data Science Research Perú
+  link: www.datascience.pe/
+  ref_img: https://www.datascience.pe/assets/logo/logo-dsrp-blanco.png
+  job_title: Consultor Web Scraping & Data Acquisition
+  dates: November 2020 - March 2021
+  quote: >
+    Consultor Semi Senior a Tiempo Parcial
+  description: | # this will include new lines to allow paragraphs
+    Especialista a tiempo parcial bajo la metodología ágil Kanban, responsable de obtener data de webs gubernamentales empleando BeautifulSoup4 y Selenium WebDriver, asignado a la reconstrucción de bases relacionales empleando PostgreSQL y SQL Server. 

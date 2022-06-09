@@ -1,24 +1,40 @@
 # Education Template
-- name: UNT
-  dates: 2015 - 2017, 2019
-  qualification: Bc. Ciencias de la Computacion
+- name: Spanish
+  dates: 2021
+  level: Tesista de Pregrado
+  link: unsm.edu.pe/facultad/ciencias-agrarias/laboratorio-biologia-genetica-molecular/
+  ref_img: https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Peru_%28state%29.svg
+  quote: >
+    Laboratorio de Biología y Genética Molecular - Universidad Nacional de San Martín, San Martín - Peru
+  description: | 
+    Tesista en BioInformatica
+
+- name: English
+  dates: 2015 - 2017, 2019 - 2020
+  level: BSc. Computer Science
+  link: unitru.edu.pe/
+  ref_img: https://unitru.edu.pe/Recursos/img-unt/logo-unt1.png
   quote: >
     Universidad Nacional de Trujillo, La Libertad - Peru
-  description: |
-    Actualmente Cursando estudios en la UNT , facultad de Ciencias Fisicas y Matematicas, E.A.P. Informatica.
+  description: | # this will include new lines to allow paragraphs
+    Egresado en el Top 5 de mi promocion (2020), E.A.P. Informatica - facultad de Ciencias Fisicas y Matematicas.
 
-- name: ICMC - USP
+- name: Portuges
   dates: 2018
-  qualification: Bc. Ciencias de la Computacion
+  level: BSc. Computer Science
+  link: icmc.usp.br/
+  ref_img: https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1024px-Flag_of_Brazil.svg.png
   quote: >
     Instituto de Ciências Matemáticas e de Computação - Universidade de São Paulo , São Carlos, SP - Brasil
-  description: |
-    Intercambio Academico, Duracion de 2 semestres academicos
+  description: | # this will include new lines to allow paragraphs
+    ntercambio Academico, Duracion de 2 semestres academicos
 
-- name: UNMSM
-  dates: 2012 - 2013
-  qualification: BC. Ciencias Fisica
+- name: French
+  dates: 2018
+  level: BSc. Computer Science
+  link: icmc.usp.br/
+  ref_img: https://www.icmc.usp.br/templates/icmc2015/img/logo-50a.png
   quote: >
-    Universidad Nacional Mayor de San Marcos, Lima - Peru
-  description: |
-    Estudios suspendios en la UNMSM, facultad de fisica, E.A.P. de Fisica , 2 anos de duracion
+    Instituto de Ciências Matemáticas e de Computação - Universidade de São Paulo , São Carlos, SP - Brasil
+  description: | # this will include new lines to allow paragraphs
+    ntercambio Academico, Duracion de 2 semestres academicos

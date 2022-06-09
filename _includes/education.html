@@ -1,18 +1,36 @@
 <div class="container education-container">
-  <h3>{{ site.education_title | default: "Education" }}</h3>
-  {% for education in site.data.education %}
+  <h3>{{ site.education_title | default: "Education" }}
+  </h3>
+  <button class="no-print" onclick="hideComponent('educationParent')" style="background-color: gray;">Hide/Show</button>
+  <div id="educationParent">
+    {% for education in site.data.education %}
     <div class="row clearfix education">
-      <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 left-column">
-        <h4>{{ education.name }}</h4>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-print-4 left-column">
+        <h4 class="name">
+          {%- if education.link -%}
+            <a href="https://{{ education.link }}" target="_blank">
+          {%- endif -%}
+            {{ education.name }}
+          {%- if education.link -%}
+            </a>
+          {%- endif -%}
+        </h4>
         <p><b>{{ education.qualification }}</b></p>
         <p>{{ education.dates }}</p>
+        {%- if education.ref_img %}
+            <p style="margin-top: 5%;">
+              <img class="business-logo" src="{{ education.ref_img }}">
+            </p>
+          {%- endif -%} 
       </div>
-      <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <div class="col-xs-12 col-sm-8 col-md-9 col-print-8">
         {%- if education.quote -%}
           <p class="quote">{{ education.quote }}</p>
         {%- endif -%}
         {{ education.description | strip | markdownify }}
       </div>
     </div>
+  <hr></hr>
   {% endfor %}
+  </div>
 </div>
