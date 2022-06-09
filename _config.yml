@@ -8,9 +8,9 @@ repository: Git repository where your resume will be hosted, only required if yo
 # Personal info
 name: Jahir Medina
 full_name: Jahir Gilberth Medina Lopez
-title: BsC Computer Science / Informatics Engineer
+title: BsC. Computer Science / Informatics Engineer
 email: contact@jahirmedina.com
-website: ghp.jahirmedina.com
+# website: ghp.jahirmedina.com
 phone_number: 
   - tag: WorldWide
     value: 12345294385
@@ -38,7 +38,15 @@ linkedin_username: jahirmedinacs
 about_title: Brief Bio
 about_profile_image: /assets/cv-firstplane.jpg
 about_content: | # this will include new lines to allow paragraphs
-  QA Automation Engineer and Scientific Computing Researcher | Computer Science Bachelor and Informatics Engineer from National Unversity of Trujillo
+  I see myself as a pragmatic, diligent, and multifaceted individual. From public speaking and political debate to microcontroller programming and task automation, I possess a diverse set of talents.
+  
+  Throughout my undergraduate education, I excelled and dedicated myself to a range of intellectual and political activities.
+  
+  Archiving an academic exchange program in which I learnt a lot about machine learning and was a crucial element in winning national hackathons.
+  
+  Later, I was responsible for completing my undergraduate thesis in a genetics and molecular biology lab, where my knowledge in server administration, cloud computing, and UNIX systems proved to be quite useful.
+  
+  Because of the road I forged with hard work and commitment, I have had the chance to work for a variety of worldwide organizations, where I can continue to demonstrate the value of my work.
 
 
 # Experience Section

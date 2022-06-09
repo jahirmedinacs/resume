@@ -1,27 +1,30 @@
 # Experience template
-- company: Company name
-  link: Link to company (optional)
-  job_title: Job title
-  dates: Date Range (eg. November 2016 - present)
-  quote: >
-    Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of role
+# - company: Company name
+#   link: Link to company (optional)
+#   job_title: Job title
+#   dates: Date Range (eg. November 2016 - present)
+#   quote: >
+#     Short description of the company (optional)
+#   description: | # this will include new lines to allow paragraphs
+#     Description of role
 
-- company: NTTData Emeal (Everis)
-  link: https://pe.nttdata.com/
+- company: NTTData EMEAL
+  link: pe.nttdata.com/
   job_title: Senior Test Automation Engineer
   dates: August 2021 - Current Date
   quote: >
-    Short description of the company (optional)
+    Full-time Test Automation Engineer in Off-Shore Project (Spain)
   description: | # this will include new lines to allow paragraphs
-    Description of role
+    - Automation & Performance Tester Specialist using Selenium, Postman, SoapUI, Cucumber, TestNG and JMeter with Jenkins or Docker. Currently working under SCRUM methodology using Jira and Kanban.
+    - Supervisor of a multi-national team of junior testers. 
+    - Trainer and evaluator of new talents in Automation Testing (Web and API).
 
-- company: NTTData Emeal (Everis)
-  link: https://pe.nttdata.com/
-  job_title: Senior Test Automation Engineer
-  dates: August 2021 - Current Date
+- company: Delaware Peru
+  link: www.grupodelaware.com/
+  job_title: QA Analyst
+  dates: March 2021 - Agoust 2021
   quote: >
-    Short description of the company (optional)
+    Full Time Software Quality Analyst
   description: | # this will include new lines to allow paragraphs
-    Description of role
+    Full-time tester for Telefónica Movistar (Client) under the agile Scrum methodology, performing E2E, Integration and automated tests with Selenium WebDriver, Postman, SoapUI, Android Studio and Appium.
+

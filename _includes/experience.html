@@ -1,16 +1,18 @@
-<!-- <button onclick="hideComponent('experienceParent')">Hide/Show</button> -->
 
-<div class="container experience-container" id="experienceParent">
+
+<div class="container experience-container">
   <h3>{{ site.experience_title | default: "Experience" }}
   </h3>
+  <button class="no-print" onclick="hideComponent('experienceParent')" style="background-color: gray;">Hide/Show</button>
+  <div id="experienceParent">
   {% for experience in site.data.experience %}
     <div class="row clearfix experience">
       <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 left-column">
         <h4 class="name">
           {%- if experience.link -%}
-            <a href="http://{{ experience.link }}" target="_blank">
+            <a href="https://{{ experience.link }}" target="_blank">
           {%- endif -%}
-            {{ experience.company }}
+            {{ experience.company }} &nbsp;|&nbsp; <img src="https://{{ experience.link }}/favicon.ico">
           {%- if experience.link -%}
             </a>
           {%- endif -%}
@@ -26,4 +28,5 @@
       </div>
     </div>
   {% endfor %}
+  </div>
 </div>
