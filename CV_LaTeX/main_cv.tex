@@ -1,0 +1,104 @@
+\documentclass[10pt,letterpaper]{article} % Using standard article class for ATS compatibility
+
+\usepackage[utf8]{inputenc} % For proper character encoding
+\usepackage[T1]{fontenc}    % For font encoding, helps with PDF text extraction
+\usepackage{geometry}       % For page margins
+\usepackage{titlesec}       % To customize section titles (optional, keep simple)
+\usepackage{enumitem}       % For customizing lists (e.g., bullet points)
+\usepackage{hyperref}       % For clickable links (email, LinkedIn)
+\usepackage{needspace}      % To prevent awkward page breaks in sections
+\usepackage{ragged2e}       % For \RaggedRight
+
+% --- PAGE GEOMETRY ---
+\geometry{
+    letterpaper,
+    left=0.75in,
+    right=0.75in,
+    top=0.75in,
+    bottom=0.75in,
+    noheadfoot % No headers or footers for better ATS parsing
+}
+
+% --- FONTS (Using LaTeX default - Computer Modern, generally ATS-safe) ---
+
+% --- SECTION STYLING (Keep it simple for ATS) ---
+\titleformat{\section}
+  {\Large\bfseries\RaggedRight} % Section title format: Large, Bold, Left-aligned
+  {}                             % No number
+  {0em}                          % No horizontal indent before title
+  {}                             % Code executed before the title
+  [\titlerule\vspace{0.5ex}]     % Horizontal rule below title, with some space
+
+\titlespacing*{\section}
+  {0pt}                      % Left margin
+  {1.5\baselineskip}         % Space before title
+  {0.5\baselineskip}         % Space after title
+
+% --- CUSTOM COMMANDS (Optional) ---
+\newcommand{\cvitem}[1]{%
+  \item #1%
+}
+\newcommand{\cvskill}[1]{\textbullet~#1} % Simple skill item
+
+% --- HYPERLINK SETUP ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % Or black for a more subtle look
+    filecolor=magenta,
+    urlcolor=blue,    % Or black
+    pdftitle={Jahir Gilberth Medina Lopez - CV}, % Updated with your name
+    pdfauthor={Jahir Gilberth Medina Lopez},    % Updated with your name
+    pdfcreator={LaTeX},
+    pdfkeywords={CV, Resume, Software Testing, QA Automation, SDET, C\#, Java, Python, Selenium, Cypress, Playwright}, % Keywords from your data - CORRECTED C# to C\#
+    bookmarks=true % Creates PDF bookmarks for sections
+}
+
+% --- DOCUMENT START ---
+\begin{document}
+\pagestyle{empty} % No page numbers, headers, or footers
+
+% --- PERSONAL INFORMATION ---
+\input{sections/00_personal_info.tex}
+
+% --- WORK EXPERIENCE ---
+\Needspace{5\baselineskip} % Ensure enough space before this section or move to new page
+\section*{Work Experience}
+\input{sections/01_experience.tex}
+
+% --- EDUCATION ---
+\Needspace{5\baselineskip}
+\section*{Education}
+\input{sections/02_education.tex}
+
+% --- SKILLS ---
+\Needspace{5\baselineskip}
+\section*{Skills}
+\input{sections/03_skills.tex}
+
+% --- ACADEMIC EXPERIENCE ---
+\Needspace{5\baselineskip}
+\section*{Academic Experience}
+\input{sections/04_academic_experience.tex}
+
+% --- AWARDS AND ACHIEVEMENTS ---
+\Needspace{5\baselineskip}
+\section*{Awards and Achievements}
+\input{sections/05_awards_achievements.tex}
+
+% --- CERTIFICATIONS AND COURSES ---
+\Needspace{5\baselineskip}
+\section*{Certifications and Courses}
+\input{sections/06_certifications_courses.tex}
+
+% --- LANGUAGES ---
+\Needspace{5\baselineskip}
+\section*{Languages}
+\input{sections/07_languages.tex}
+
+% --- RESEARCH TOPICS EXPERIENCE ---
+\Needspace{5\baselineskip}
+\section*{Research Topics Experience}
+\input{sections/08_research_topics.tex}
+
+% --- DOCUMENT END ---
+\end{document}
