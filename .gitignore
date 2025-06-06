@@ -1,3 +1,64 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*-blx.bib
+*.run.xml
+*.bcf
+
+# Build tool files (e.g., latexmk)
+*.pdfsync
+.latexmkrc
+
+# Editor and IDE specific files
+# IntelliJ IDEA / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+*~
+*.bak
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Compiled PDF (if you only want to keep the source)
+# You might want to keep your final PDF in the repo, so this is often commented out.
+# *.pdf
+
+# Other temporary files
+*.tmp
+
+# Output directory (if you use one, e.g., build/)
+# build/
+# out/
+
+
 *.gem
 .bundle
 .sass-cache

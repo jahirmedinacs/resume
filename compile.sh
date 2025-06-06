@@ -1,23 +1,24 @@
 #!/bin/bash
 
-# Script to compile the LaTeX CV project using pdflatex,
+# Script to compile the LaTeX CV project using xelatex (for fontspec compatibility),
 # output a named PDF, and automatically clean up auxiliary files.
 
 # --- Configuration ---
 PROJECT_DIR_NAME="CV_LaTeX"
 MAIN_TEX_FILE="main_cv.tex"
 OUTPUT_PDF_NAME="Jahir_Medina-CV_eng.pdf"
-TARGET_PDF_IN_PROJECT_DIR="main_cv.pdf" # Default output name from pdflatex
+TARGET_PDF_IN_PROJECT_DIR="main_cv.pdf" # Default output name from xelatex (usually same as main .tex file)
+LATEX_ENGINE="xelatex" # Changed from pdflatex to xelatex
 
-# Number of pdflatex runs (2-3 is usually sufficient for most documents)
-LATEX_RUNS=3
+# Number of LaTeX engine runs (2-3 is usually sufficient)
+LATEX_RUNS=2 # XeLaTeX often needs fewer runs than pdflatex for simple docs, but 2 is safe.
 
 # Auxiliary files to clean (extensions)
-AUX_FILES_EXTENSIONS=("aux" "log" "out" "toc" "fls" "fdb_latexmk" "synctex.gz")
+AUX_FILES_EXTENSIONS=("aux" "log" "out" "toc" "fls" "fdb_latexmk" "synctex.gz" "xdv") # Added .xdv for XeLaTeX
 
 # --- Script Execution ---
 
-echo "Starting LaTeX CV compilation..."
+echo "Starting LaTeX CV compilation with $LATEX_ENGINE..."
 
 # Check if the project directory exists
 if [ ! -d "$PROJECT_DIR_NAME" ]; then
@@ -38,20 +39,15 @@ if [ ! -f "$MAIN_TEX_FILE" ]; then
     exit 1
 fi
 
-echo "Compiling '$MAIN_TEX_FILE' with pdflatex..."
+echo "Compiling '$MAIN_TEX_FILE' with $LATEX_ENGINE..."
 
-# Run pdflatex multiple times
+# Run the LaTeX engine multiple times
 for i in $(seq 1 $LATEX_RUNS); do
-    echo "--- pdflatex Run #$i ---"
-    pdflatex -interaction=nonstopmode -halt-on-error "$MAIN_TEX_FILE"
+    echo "--- $LATEX_ENGINE Run #$i ---"
+    "$LATEX_ENGINE" -interaction=nonstopmode -halt-on-error -synctex=1 "$MAIN_TEX_FILE"
     if [ $? -ne 0 ]; then
-        echo "Error: pdflatex compilation failed on run #$i."
+        echo "Error: $LATEX_ENGINE compilation failed on run #$i."
         echo "Check the log file ($MAIN_TEX_FILE.log) for details."
-        # Optionally, still try to clean up before exiting on failure
-        # echo "Cleaning up auxiliary files after error..."
-        # for ext in "${AUX_FILES_EXTENSIONS[@]}"; do
-        #    rm -f *."$ext"
-        # done
         cd .. # Go back to the original directory
         exit 1
     fi
@@ -60,7 +56,9 @@ done
 echo "Compilation finished."
 
 # Check if the default PDF was created and rename it
-if [ -f "$TARGET_PDF_IN_PROJECT_DIR" ]; then
+# XeLaTeX usually outputs main_cv.pdf directly from main_cv.tex
+if [ -f "$(basename "$MAIN_TEX_FILE" .tex).pdf" ]; then
+    TARGET_PDF_IN_PROJECT_DIR="$(basename "$MAIN_TEX_FILE" .tex).pdf" # Ensure correct target name
     echo "Renaming '$TARGET_PDF_IN_PROJECT_DIR' to '$OUTPUT_PDF_NAME'..."
     mv "$TARGET_PDF_IN_PROJECT_DIR" "$OUTPUT_PDF_NAME"
     if [ $? -eq 0 ]; then
@@ -70,19 +68,15 @@ if [ -f "$TARGET_PDF_IN_PROJECT_DIR" ]; then
         # Automatic cleanup of auxiliary files
         echo "Cleaning up auxiliary files..."
         for ext in "${AUX_FILES_EXTENSIONS[@]}"; do
-            # Using find to delete files matching the main tex file's basename and the extension
-            # This is safer than `rm -f *."$ext"` if other .tex files exist
             find . -maxdepth 1 -name "$(basename "$MAIN_TEX_FILE" .tex).$ext" -delete
         done
         echo "Auxiliary files cleaned."
 
     else
         echo "Error: Could not rename '$TARGET_PDF_IN_PROJECT_DIR' to '$OUTPUT_PDF_NAME'."
-        # Decide if you want to clean up even if renaming failed
     fi
 else
-    echo "Error: '$TARGET_PDF_IN_PROJECT_DIR' was not created. Check compilation logs."
-    # Decide if you want to clean up even if PDF wasn't created
+    echo "Error: PDF file '$(basename "$MAIN_TEX_FILE" .tex).pdf' was not created. Check compilation logs."
 fi
 
 # Navigate back to the original directory
