@@ -32,13 +32,16 @@ SECTION_FILES=(
     "13_volunteering.tex"
     "14_hobbies_interests.tex"
     "15_portfolio.tex"
-    "16_community_service.tex"
+    "16_community_involvement.tex"
     "17_professional_memberships.tex"
     "18_conferences_workshops.tex"
-    "19_networking_events.tex"
-    "20_personal_projects.tex"
-    "21_testimonials_recommendations.tex"
-    "22_future_goals.tex"
+    "19_internships.tex"
+    "20_volunteer_projects.tex"
+    "21_teaching_experiences.tex"
+    "22_personal_non_profit_projects.tex"
+    "23_mentorship_experiences.tex"
+    "24_personal_for_profit_projects.tex"
+    "25_licenses_permits.tex"
 )
 
 # --- SCRIPT EXECUTION ---
