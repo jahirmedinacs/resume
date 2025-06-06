@@ -3,7 +3,7 @@
 % Adapted from a template for Jahir Medina
 %------------------------
 
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{latexsym}
 \usepackage{xcolor}
 \usepackage{float}
@@ -27,7 +27,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\geometry{left=1.2cm, top=1.2cm, right=1.2cm, bottom=1.2cm}
 
 \urlstyle{same}
 \raggedright
@@ -40,6 +40,12 @@
 
 % --- Custom commands ---
 \newcounter{jobcounter} % Create a counter for jobs
+\newcounter{educounter} % New counter for education
+\newcounter{acadcounter} % New counter for academic experience
+\newcounter{awardcounter} % New counter for awards
+\newcounter{certcounter} % New counter for certifications
+\newcounter{researchcounter} % New counter for research topics
+
 
 % This is the primary command for non-numbered sections like Education
 \newcommand{\resumeSubheading}[4]{ 
@@ -51,16 +57,21 @@
 }
 
 % Command for skills to reference jobs
-\newcommand{\skillref}[1]{{\footnotesize[\ref{#1}]}}
+\newcommand{\skillref}[1]{{\tiny[\ref{#1}]}}
 
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 % This command will now generate the numbered labels for the Work Experience section
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=2em, label=\textnormal{\footnotesize[\arabic{jobcounter}]}]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{0.5mm}}
+
+\newcommand{\resumeSubHeadingEnumerateListStart}{\begin{enumerate}[leftmargin=*,labelsep=0mm,itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]}
+\newcommand{\resumeSubHeadingEnumerateListEnd}{\end{enumerate}\vspace{-2mm}}
+
+\newcommand{\resumeHeadingSkillStart}{\vspace{-5mm}\begin{multicols}{3}\begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\end{multicols}\vspace{-5mm}}
+
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.5em, rightmargin=0ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
-\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0.5mm}}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
@@ -79,7 +90,13 @@
 
 \begin{document}
 \fontfamily{clm}\selectfont
+
 \setcounter{jobcounter}{0} % Reset job counter at the beginning of the document
+\setcounter{educounter}{0} % Reset education counter
+\setcounter{acadcounter}{0} % Reset academic experience counter
+\setcounter{awardcounter}{0} % Reset awards counter
+\setcounter{certcounter}{0} % Reset certifications counter
+\setcounter{researchcounter}{0} % Reset research topics counter
 
 %----------HEADING-----------------
 {
@@ -90,65 +107,128 @@
   Computer Science / Informatics Engineering & \href{\myLinkedInURL}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {\myLinkedIn}} \\
 \end{tabularx}
 }
-\vspace{2mm}
+\vspace{-1mm}
 
 % --- SUMMARY ---
 \begin{center}
-    \begin{minipage}{0.9\textwidth}
+    \begin{minipage}{0.85\textwidth}
         \RaggedRight
         \input{sections/00_personal_info.tex}
     \end{minipage}
 \end{center}
-\vspace{2mm}
+\vspace{-3mm}
 
 %-----------WORK EXPERIENCE-----------------
 \section{Work Experience}
-  % We use a standard itemize for the work experience section to control numbering
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]
+  % We use a standard enumerate for the work experience section to control numbering
+  \resumeSubHeadingEnumerateListStart
     \input{sections/01_experience.tex}
-  \end{itemize}
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------SKILLS & TECHNOLOGIES-----------------
 \section{Skills \& Technologies}
  \resumeHeadingSkillStart
-   \input{sections/03_skills.tex}
- \resumeHeadingSkillEnd
+  \small{
+    \input{sections/03_skills.tex}
+  }
+  \resumeHeadingSkillEnd
 
 %-----------EDUCATION-----------
 \section{Education}
-  % Education is not numbered, so we use the original list command
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeSubHeadingEnumerateListStart
     \input{sections/02_education.tex}
-  \end{itemize}
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------ACADEMIC EXPERIENCE-----------------
 \section{Academic Experience}
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeSubHeadingEnumerateListStart
     \input{sections/04_academic_experience.tex}
-  \end{itemize}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/09_projects.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------PUBLICATIONS-----------------
+\section{Publications}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/10_publications.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------CONFERENCES-----------------
+\section{Conferences}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/11_conferences.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------VOLUNTEER EXPERIENCE-----------------
+\section{Volunteer Experience}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/12_volunteer_experience.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------PROFESSIONAL MEMBERSHIPS-----------------
+\section{Professional Memberships}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/13_professional_memberships.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------REFERENCES-----------------
+\section{References}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/14_references.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------INTERNSHIPS-----------------
+\section{Internships}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/15_internships.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------HOBBIES AND INTERESTS-----------------
+\section{Hobbies \& Interests}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/16_hobbies_interests.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------VOLUNTEER PROJECTS-----------------
+\section{Volunteer Projects}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/17_volunteer_projects.tex}
+  \resumeSubHeadingEnumerateListEnd
+
+%-----------COMMUNITY INVOLVEMENT-----------------
+\section{Community Involvement}
+  \resumeSubHeadingEnumerateListStart
+    \input{sections/18_community_involvement.tex}
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------RESEARCH TOPICS EXPERIENCE-----------------
 \section{Research Topics Experience}
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeSubHeadingEnumerateListStart
     \input{sections/08_research_topics.tex}
-  \end{itemize}  
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------AWARDS AND ACHIEVEMENTS-----------------
 \section{Awards and Achievements}
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeSubHeadingEnumerateListStart
     \input{sections/05_awards_achievements.tex}
-  \end{itemize}
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------CERTIFICATIONS AND COURSES-----------------
 \section{Certifications and Courses}
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeSubHeadingEnumerateListStart
     \input{sections/06_certifications_courses.tex}
-  \end{itemize}
+  \resumeSubHeadingEnumerateListEnd
 
 %-----------LANGUAGES-----------------
 \section{Languages}
-  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
+  \resumeHeadingSkillStart
+  \small{
     \input{sections/07_languages.tex}
-  \end{itemize}
+  }
+  \resumeHeadingSkillEnd
 
 \end{document}

@@ -25,6 +25,20 @@ SECTION_FILES=(
     "06_certifications_courses.tex"
     "07_languages.tex"
     "08_research_topics.tex"
+    "09_publications.tex"
+    "10_references.tex"
+    "11_additional_info.tex"
+    "12_projects.tex"
+    "13_volunteering.tex"
+    "14_hobbies_interests.tex"
+    "15_portfolio.tex"
+    "16_community_service.tex"
+    "17_professional_memberships.tex"
+    "18_conferences_workshops.tex"
+    "19_networking_events.tex"
+    "20_personal_projects.tex"
+    "21_testimonials_recommendations.tex"
+    "22_future_goals.tex"
 )
 
 # --- SCRIPT EXECUTION ---
