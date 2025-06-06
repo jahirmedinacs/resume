@@ -4,28 +4,28 @@
 %------------------------
 
 %---- Required Packages and Functions ----
-\documentclass[a4paper,11pt]{article} % From new template
+\documentclass[a4paper,11pt]{article}
 \usepackage{latexsym}
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{ragged2e}
 \usepackage[empty]{fullpage}
-% \usepackage{wrapfig} % Not directly used in your content structure yet
-% \usepackage{lipsum} % Typically for placeholder text
+% \usepackage{wrapfig}
+% \usepackage{lipsum}
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{geometry}
-% \usepackage{marvosym} % fontawesome5 is used for icons
+% \usepackage{marvosym}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref} % hidelinks removes boxes around links
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage{fontawesome5} % For icons like phone, envelope, LinkedIn, GitHub
+\usepackage{fontawesome5}
 \usepackage{multicol}
-% \usepackage{graphicx} % If you were to include images
-\usepackage{cfr-lm} % For Latin Modern fonts (replaces Noto Sans setup)
+% \usepackage{graphicx}
+\usepackage{cfr-lm} % For Latin Modern fonts
 \usepackage[T1]{fontenc} % Crucial for font encoding with pdflatex
-\usepackage[most]{tcolorbox} % For shaded section boxes (if we use \cvsection)
+% \usepackage[most]{tcolorbox} % Not using \cvsection for now, can be added later if desired
 
 % --- Page Style and Geometry from new template ---
 \setlength{\multicolsep}{0pt}
@@ -36,26 +36,8 @@
 \renewcommand{\footrulewidth}{0pt}
 \geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm} % Margins from new template
 
-% --- tcolorbox setup for \cvsection (if we decide to use it) ---
-% This was in the provided main.tex, but it seems the sections were made with \section{}
-% We can activate this later if desired for a different section style.
-% \tcbset{
-%  frame code={},
-%  center title,
-%  left=0pt,
-%  right=0pt,
-%  top=0pt,
-%  bottom=0pt,
-%  colback=gray!20,
-%  colframe=white,
-%  width=\dimexpr\textwidth\relax,
-%  enlarge left by=-2mm,
-%  boxsep=4pt,
-%  arc=0pt,outer arc=0pt,
-% }
-
 \urlstyle{same} % For consistent URL appearance
-\raggedright    % Global setting, though \RaggedRight is often preferred locally
+\raggedright    % Global setting
 \setlength{\tabcolsep}{0in}
 
 % --- Sections formatting (from new template) ---
@@ -64,157 +46,110 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}] % Rule below title
 
 % --- Custom commands from new template ---
-\newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
-  }
-}
-
-\newcommand{\resumePOR}[3]{ % For Positions of Responsibility
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
-    \end{tabular*}
-    \vspace{-2mm}
-}
-
-% This is the main command we'll adapt our experience and education to use
 \newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
+\vspace{0.5mm}\item % This \item is crucial; it makes \resumeSubheading an item in the outer list
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\ % Job Title/Degree & Dates
-        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\ % Company/University & Location (Note: order might be different from your original)
+        \textbf{#1} & \textit{\footnotesize{#4}} \\ % Arg1: Job Title/Degree & Arg4: Dates
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\ % Arg3: Company/University & Arg2: Location (Order based on template)
     \end{tabular*}
-    \vspace{-2.4mm}
+    % \vspace{-2.4mm}
 }
 
-\newcommand{\resumeProject}[4]{ % If you use it for projects
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#3}} \\
-        \footnotesize{\textit{#2}} & \footnotesize{#4}
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$} % Tiny bullet for first level itemize
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-
-% Customize itemize labels (tiny bullet)
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
-% \renewcommand{\labelitemii}{$\circ$} % For second level, if needed
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]} % For skills
-\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+% These commands define the list environments that will wrap the content from section files
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm, itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.5em, rightmargin=0ex, itemsep=0mm, topsep=0mm, parsep=0mm, partopsep=0mm, labelsep=1.2mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{0.5mm}}
 \newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
-
-% This was defined in new main.tex, but sections used \section{}
-% \newcommand{\cvsection}[1]{%
-% \vspace{2mm}
-% \begin{tcolorbox}
-%     \textbf{\large #1}
-% \end{tcolorbox}
-%     \vspace{-4mm}
-% }
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-0.5mm}}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
-\newcolumntype{C}{>{\centering\arraybackslash}X}%
-%---- End of Packages and Functions ------
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%
-%%%%%% DEFINE YOUR ELEMENTS HERE (from new template, adapted) %%%%%%%
-\newcommand{\myName}{Jahir Gilberth Medina Lopez, BSc.}
-\newcommand{\myLocation}{Trujillo, La Libertad, Perú} % Not in new template's header, but good to have
-\newcommand{\myPhone}{(+51) 974453856}
-\newcommand{\myPhonePlain}{+51974453856} % For tel: link
+%%%%%%  CV Information (Used in Header) %%%%%%%
+\newcommand{\myName}{Jahir Medina, BSc.}
+\newcommand{\myFullName}{Jahir Gilberth Medina Lopez}
+\newcommand{\myLocation}{Trujillo, La Libertad, Perú}
+\newcommand{\myPhoneLocal}{+51 (01) 974453856}
+\newcommand{\myPhoneLocalPlain}{+51974453856} % For tel: link
+\newcommand{\myPhoneGlobal}{+1 (234) 529-4385}
+\newcommand{\myPhoneGlobalPlain}{+12345294385} % For tel: link
 \newcommand{\myEmail}{contact@jahirmedina.com}
 \newcommand{\myLinkedIn}{linkedin.com/in/jahirmedinacs}
 \newcommand{\myLinkedInURL}{https://www.linkedin.com/in/jahirmedinacs/}
-% \newcommand{\myGithub}{github.com/yourusername} % Add if you have one
-% \newcommand{\myGithubURL}{https://github.com/yourusername}
 
 \begin{document}
 \fontfamily{clm}\selectfont % Select Latin Modern font family (from cfr-lm)
 
 %----------HEADING (Adapted from new template)-----------------
-{ % Group to keep changes local if any
-\begin{tabularx}{\linewidth}{L r} % Using tabularx for two columns
-  \textbf{\Huge \myName} & {\raisebox{0.0\height}{\footnotesize \faPhone}\ \href{tel:\myPhonePlain}{\myPhone}}\\ % Name and Phone
-  \myLocation & \href{mailto:\myEmail}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\myEmail}} \\ % Location and Email
-  % You can add more lines here if needed, e.g., a subtitle or profession
-  Computer Science / Informatics Engineering & \href{\myLinkedInURL}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {\myLinkedIn}} \\ % Degree/Title and LinkedIn
-  % Optional GitHub
-  % & \href{\myGithubURL}{\raisebox{0.0\height}{\footnotesize \faGithub}\ {\myGithub}}
+{
+\begin{tabularx}{\linewidth}{L r}
+  \textbf{\Huge \myName} & {\raisebox{0.0\height}{\footnotesize}\ \href{tel:\myPhoneLocalPlain}{\faPhone\ \myPhoneLocal} {|}\href{https://wa.me/\myPhoneLocalPlain}{\ \faWhatsapp}}\\
+  \textbf{\small \myFullName} & {\raisebox{0.0\height}{\footnotesize}\ \href{tel:\myPhoneGlobalPlain}{\faPhone\ \myPhoneGlobal} {|}\href{https://wa.me/\myPhoneGlobalPlain}{\ \faWhatsapp}}\\
+  \myLocation & \href{mailto:\myEmail}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\myEmail}} \\
+  Computer Science / Informatics Engineering & \href{\myLinkedInURL}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {\myLinkedIn}} \\
 \end{tabularx}
 }
 \vspace{2mm} % Space after header
 
-% --- SUMMARY (Input from your section file) ---
-% We need to ensure 00_personal_info.tex only contains the summary now,
-% or we can place the summary directly here.
-% For now, let's assume it's still in the file.
-\input{sections/00_personal_info.tex}
+% --- SUMMARY ---
+\begin{center}
+    \begin{minipage}{0.9\textwidth}
+        \RaggedRight
+        \input{sections/00_personal_info.tex}
+    \end{minipage}
+\end{center}
 \vspace{2mm}
-
-%-----------EDUCATION-----------
-\section{\textbf{Education}}
-  \resumeSubHeadingListStart
-    \input{sections/02_education.tex} % Content will be adapted inside this file
-  \resumeSubHeadingListEnd
-% \vspace{-5.5mm} % Spacing from new template, adjust as needed
 
 %-----------WORK EXPERIENCE-----------------
 \section{\textbf{Work Experience}}
   \resumeSubHeadingListStart
-    \input{sections/01_experience.tex} % Content will be adapted inside this file
+    \input{sections/01_experience.tex}
   \resumeSubHeadingListEnd
-% \vspace{-5.5mm}
 
 %-----------SKILLS-----------------
-% The new template had a very specific structure for skills
-% We will adapt sections/03_skills.tex to match that, or define it here.
 \section{\textbf{Skills}}
- \input{sections/03_skills.tex} % Content will be adapted to use \resumeHeadingSkillStart etc.
-% \vspace{-16pt}
+ \resumeHeadingSkillStart
+   \input{sections/03_skills.tex}
+ \resumeHeadingSkillEnd
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+    \input{sections/02_education.tex}
+\resumeSubHeadingListEnd
 
 %-----------ACADEMIC EXPERIENCE-----------------
 \section{\textbf{Academic Experience}}
   \resumeSubHeadingListStart
     \input{sections/04_academic_experience.tex}
   \resumeSubHeadingListEnd
-% \vspace{-5mm}
 
-%-----------AWARDS AND ACHIEVEMENTS-----------------
+%-----------RESEARCH TOPICS EXPERIENCE-----------------
+\section{\textbf{Research Topics Experience}}
+  \resumeSubHeadingListStart
+    \input{sections/08_research_topics.tex}
+  \resumeSubHeadingListEnd  
+
+  %-----------AWARDS AND ACHIEVEMENTS-----------------
 \section{\textbf{Awards and Achievements}}
-  \resumeSubHeadingListStart % Use resumeSubHeadingListStart for consistency
-    \input{sections/05_awards_achievements.tex} % This will need to use \item or \resumeItem
+  \resumeSubHeadingListStart
+    \input{sections/05_awards_achievements.tex}
   \resumeSubHeadingListEnd
-% \vspace{-5mm}
 
 %-----------CERTIFICATIONS AND COURSES-----------------
 \section{\textbf{Certifications and Courses}}
   \resumeSubHeadingListStart
     \input{sections/06_certifications_courses.tex}
   \resumeSubHeadingListEnd
-% \vspace{-5mm}
 
 %-----------LANGUAGES-----------------
 \section{\textbf{Languages}}
   \resumeSubHeadingListStart
     \input{sections/07_languages.tex}
   \resumeSubHeadingListEnd
-% \vspace{-5mm}
-
-%-----------RESEARCH TOPICS EXPERIENCE-----------------
-\section{\textbf{Research Topics Experience}}
-  \resumeSubHeadingListStart
-    \input{sections/08_research_topics.tex}
-  \resumeSubHeadingListEnd
-% \vspace{-5mm}
 
 %-------------------------------------------
 \end{document}
