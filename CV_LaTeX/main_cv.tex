@@ -3,87 +3,85 @@
 % Adapted from a template for Jahir Medina
 %------------------------
 
-%---- Required Packages and Functions ----
 \documentclass[a4paper,11pt]{article}
 \usepackage{latexsym}
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{ragged2e}
 \usepackage[empty]{fullpage}
-% \usepackage{wrapfig}
-% \usepackage{lipsum}
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{geometry}
-% \usepackage{marvosym}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{fontawesome5}
 \usepackage{multicol}
-% \usepackage{graphicx}
-\usepackage{cfr-lm} % For Latin Modern fonts
-\usepackage[T1]{fontenc} % Crucial for font encoding with pdflatex
-% \usepackage[most]{tcolorbox} % Not using \cvsection for now, can be added later if desired
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
 
-% --- Page Style and Geometry from new template ---
-\setlength{\multicolsep}{0pt}
-\pagestyle{fancy} % Uses fancyhdr
-\fancyhf{} % clear all header and footer fields
+% --- Page Style and Geometry ---
+\pagestyle{fancy}
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm} % Margins from new template
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
 
-\urlstyle{same} % For consistent URL appearance
-\raggedright    % Global setting
+\urlstyle{same}
+\raggedright
 \setlength{\tabcolsep}{0in}
 
-% --- Sections formatting (from new template) ---
+% --- Sections formatting ---
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large % Small Caps, ragged right, large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}] % Rule below title
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
-% --- Custom commands from new template ---
-\newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item % This \item is crucial; it makes \resumeSubheading an item in the outer list
+% --- Custom commands ---
+\newcounter{jobcounter} % Create a counter for jobs
+
+% This is the primary command for non-numbered sections like Education
+\newcommand{\resumeSubheading}[4]{ 
+\vspace{0.5mm}\item
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\ % Arg1: Job Title/Degree & Arg4: Dates
-        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\ % Arg3: Company/University & Arg2: Location (Order based on template)
+        \textbf{#1} & \textit{\footnotesize{#4}} \\ 
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
     \end{tabular*}
-    % \vspace{-2.4mm}
 }
 
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$} % Tiny bullet for first level itemize
+% Command for skills to reference jobs
+\newcommand{\skillref}[1]{{\footnotesize[\ref{#1}]}}
 
-% These commands define the list environments that will wrap the content from section files
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm, itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% This command will now generate the numbered labels for the Work Experience section
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=2em, label=\textnormal{\footnotesize[\arabic{jobcounter}]}]}
 \newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.5em, rightmargin=0ex, itemsep=0mm, topsep=0mm, parsep=0mm, partopsep=0mm, labelsep=1.2mm]\small}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{0.5mm}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.5em, rightmargin=0ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
 \newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-0.5mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0.5mm}}
 
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
 
-%-------------------------------------------
-%%%%%%  CV Information (Used in Header) %%%%%%%
+%---- CV Information ----
 \newcommand{\myName}{Jahir Medina, BSc.}
 \newcommand{\myFullName}{Jahir Gilberth Medina Lopez}
 \newcommand{\myLocation}{Trujillo, La Libertad, Perú}
 \newcommand{\myPhoneLocal}{+51 (01) 974453856}
-\newcommand{\myPhoneLocalPlain}{+51974453856} % For tel: link
+\newcommand{\myPhoneLocalPlain}{+51974453856}
 \newcommand{\myPhoneGlobal}{+1 (234) 529-4385}
-\newcommand{\myPhoneGlobalPlain}{+12345294385} % For tel: link
+\newcommand{\myPhoneGlobalPlain}{+12345294385}
 \newcommand{\myEmail}{contact@jahirmedina.com}
 \newcommand{\myLinkedIn}{linkedin.com/in/jahirmedinacs}
 \newcommand{\myLinkedInURL}{https://www.linkedin.com/in/jahirmedinacs/}
 
 \begin{document}
-\fontfamily{clm}\selectfont % Select Latin Modern font family (from cfr-lm)
+\fontfamily{clm}\selectfont
+\setcounter{jobcounter}{0} % Reset job counter at the beginning of the document
 
-%----------HEADING (Adapted from new template)-----------------
+%----------HEADING-----------------
 {
 \begin{tabularx}{\linewidth}{L r}
   \textbf{\Huge \myName} & {\raisebox{0.0\height}{\footnotesize}\ \href{tel:\myPhoneLocalPlain}{\faPhone\ \myPhoneLocal} {|}\href{https://wa.me/\myPhoneLocalPlain}{\ \faWhatsapp}}\\
@@ -92,7 +90,7 @@
   Computer Science / Informatics Engineering & \href{\myLinkedInURL}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {\myLinkedIn}} \\
 \end{tabularx}
 }
-\vspace{2mm} % Space after header
+\vspace{2mm}
 
 % --- SUMMARY ---
 \begin{center}
@@ -104,52 +102,53 @@
 \vspace{2mm}
 
 %-----------WORK EXPERIENCE-----------------
-\section{\textbf{Work Experience}}
-  \resumeSubHeadingListStart
+\section{Work Experience}
+  % We use a standard itemize for the work experience section to control numbering
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm, topsep=0mm, parsep=0mm, partopsep=0mm]
     \input{sections/01_experience.tex}
-  \resumeSubHeadingListEnd
+  \end{itemize}
 
-%-----------SKILLS-----------------
-\section{\textbf{Skills}}
+%-----------SKILLS & TECHNOLOGIES-----------------
+\section{Skills \& Technologies}
  \resumeHeadingSkillStart
    \input{sections/03_skills.tex}
  \resumeHeadingSkillEnd
 
 %-----------EDUCATION-----------
-\section{\textbf{Education}}
-  \resumeSubHeadingListStart
+\section{Education}
+  % Education is not numbered, so we use the original list command
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/02_education.tex}
-\resumeSubHeadingListEnd
+  \end{itemize}
 
 %-----------ACADEMIC EXPERIENCE-----------------
-\section{\textbf{Academic Experience}}
-  \resumeSubHeadingListStart
+\section{Academic Experience}
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/04_academic_experience.tex}
-  \resumeSubHeadingListEnd
+  \end{itemize}
 
 %-----------RESEARCH TOPICS EXPERIENCE-----------------
-\section{\textbf{Research Topics Experience}}
-  \resumeSubHeadingListStart
+\section{Research Topics Experience}
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/08_research_topics.tex}
-  \resumeSubHeadingListEnd  
+  \end{itemize}  
 
-  %-----------AWARDS AND ACHIEVEMENTS-----------------
-\section{\textbf{Awards and Achievements}}
-  \resumeSubHeadingListStart
+%-----------AWARDS AND ACHIEVEMENTS-----------------
+\section{Awards and Achievements}
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/05_awards_achievements.tex}
-  \resumeSubHeadingListEnd
+  \end{itemize}
 
 %-----------CERTIFICATIONS AND COURSES-----------------
-\section{\textbf{Certifications and Courses}}
-  \resumeSubHeadingListStart
+\section{Certifications and Courses}
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/06_certifications_courses.tex}
-  \resumeSubHeadingListEnd
+  \end{itemize}
 
 %-----------LANGUAGES-----------------
-\section{\textbf{Languages}}
-  \resumeSubHeadingListStart
+\section{Languages}
+  \begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm]
     \input{sections/07_languages.tex}
-  \resumeSubHeadingListEnd
+  \end{itemize}
 
-%-------------------------------------------
 \end{document}
