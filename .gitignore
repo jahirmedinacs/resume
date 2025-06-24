@@ -5,3 +5,6 @@ _site
 Gemfile.lock
 *.code-workspace
 vendor
+.idx
+/.idx/
+/.idx/*
